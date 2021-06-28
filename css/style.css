@@ -8,11 +8,26 @@ body {
   color: #3730a3;
 }
 .wrapper {
-  background: yellow;
   height: 500px;
   align-items: center;
   display: flex;
   justify-content: center;
-  margin:  auto;
+  margin: auto;
   max-width: 1140px;
+}
+.restart {
+  width: 175px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 50px;
+  border: 2px solid #4c6986;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  margin-top: 30px;
+}
+.restart:hover {
+  color: white;
+  background-color: #4c6986;
 }
