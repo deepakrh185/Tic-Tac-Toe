@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Merriweather Sans", sans-serif;
+  color: #3730a3;
+}
+.wrapper {
+  background: yellow;
+  height: 500px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin:  auto;
+  max-width: 1140px;
+}
