@@ -15,6 +15,10 @@ body {
   margin: auto;
   max-width: 1140px;
 }
+h1 {
+  font-size: 70px;
+  font-weight: bold;
+}
 .restart {
   width: 175px;
   height: 50px;
@@ -30,4 +34,53 @@ body {
 .restart:hover {
   color: white;
   background-color: #4c6986;
+}
+.header {
+  display: flex;
+  color: #9a9a9a;
+  font-size: 24px;
+}
+.header .player-x {
+  flex: 1;
+  border-bottom: 5px solid #eee;
+  padding: 8px;
+}
+.header .player-y {
+  flex: 1;
+  border-bottom: 5px solid #eee;
+  padding: 8px;
+}
+.game {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  flex-grow: 1;
+  grid-gap: 0;
+  padding: 10px;
+  font-size: 80px;
+}
+.board-title:not(:nth-child(3n)) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: solid 1px grey;
+}
+.board-title:not(:nth-last-child(-n + 3)) {
+  border-bottom: solid 1px grey;
+}
+.board-title {
+  justify-content: center;
+  align-items: center;
+  background: white;
+  display: flex;
+  cursor: pointer;
+}
+.board-title:hover {
+  background: #eee;
 }
