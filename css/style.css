@@ -11,9 +11,10 @@ body {
   height: 500px;
   align-items: center;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin: auto;
   max-width: 1140px;
+  padding: 40px;
 }
 h1 {
   font-size: 70px;
@@ -91,4 +92,7 @@ h1 {
 }
 .board-title:hover {
   background: #eee;
+}
+.tile-winner {
+  color: green;
 }
