@@ -40,15 +40,23 @@ h1 {
   color: #9a9a9a;
   font-size: 24px;
 }
-.header .player-x {
+.header .player-X {
   flex: 1;
   border-bottom: 5px solid #eee;
   padding: 8px;
 }
-.header .player-y {
+.player-X.active {
+  color: yellow;
+  border-color: yellow;
+}
+.header .player-Y {
   flex: 1;
   border-bottom: 5px solid #eee;
   padding: 8px;
+}
+.player-Y.active {
+  color: red;
+  border-color: red;
 }
 .game {
   width: 500px;

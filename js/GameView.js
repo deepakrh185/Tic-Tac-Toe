@@ -8,4 +8,8 @@ export default class GameView {
       tile.textContent = game.board[i];
     }
   }
+  updateTurn(game) {
+    playerX = document.querySelector(".player-X");
+    playerY = document.querySelector(".player-Y");
+  }
 }
