@@ -4,27 +4,22 @@ import GameView from "./GameView.js";
 let game = new Game();
 let gameView = new GameView();
 
+document.querySelector(".restart").addEventListener("click", () => restart());
+
 const title = document.querySelectorAll(".board-title");
 title.forEach((title) => {
   title.addEventListener("click", () => {
-    titleClick(title.dataset.index);
+    titleClick(title.dataset.index), { once: true };
   });
 });
+
 function titleClick(i) {
   game.makeMove(i);
   gameView.updateBoard(game);
-  game.nextTurn();
 }
-gameView.updateBoard(game);
-
-const restartGame = document.querySelector(".restart");
-restartGame.addEventListener("click", () => restart());
-
 function restart() {
   game = new Game();
   gameView.updateBoard(game);
+  document.getElementById("winning").style.visibility = "hidden";
 }
-console.log(game.turn);
-game.nextTurn();
-console.log(game.turn);
-console.log(game.board);
+gameView.updateBoard(game);

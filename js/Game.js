@@ -10,18 +10,29 @@ export default class Game {
       this.turn = "X";
     }
   }
+
   makeMove(i) {
-    if (this.endGame()) {
-      return;
+    const winningCombinations = this.findWinningCombination();
+
+    if (!winningCombinations) {
+      if (this.board[i]) {
+        return;
+      }
+
+      this.board[i] = this.turn; // X or O
+      const winningCombinations = this.findWinningCombination();
+      document.getElementById("winning");
+      console.log("winning->>>", winningCombinations);
+      if (this.endGame()) {
+        return true;
+      }
+      if (!winningCombinations) {
+        this.nextTurn();
+      }
     }
-    if (this.board[i]) {
-      return;
-    }
-    this.board[i] = this.turn; // X or O
-    const winning = this.findWinningCombinations();
-    console.log("winning", winning);
   }
-  findWinningCombinations() {
+
+  findWinningCombination() {
     const winningCombinations = [
       [0, 1, 2],
       [3, 4, 5],
@@ -33,25 +44,32 @@ export default class Game {
       [6, 4, 2],
     ];
     for (let combination of winningCombinations) {
-      console.log(combination);
       const [a, b, c] = combination;
-      console.log(this.board);
-      console.log("value of a", this.board[a]);
+
       if (
         this.board[a] &&
-        this.board[a] == this.board[b] &&
-        this.board[a] == this.board[c]
+        this.board[a] === this.board[b] &&
+        this.board[a] === this.board[c]
       ) {
         return combination;
       }
     }
-
     return null;
   }
+
   endGame() {
-    const winning = this.findWinningCombinations();
-    if (winning) {
-      return true;
-    } else return false;
+    let winningCombinations = this.findWinningCombination();
+    console.log("end", winningCombinations);
+    document.getElementById("winning");
+    if (winningCombinations) {
+  document.getElementById("winning").style.visibility = "visible";
+
+      document.querySelector("[winning]").textContent = `${
+        this.turn === "X" ? "X" : "Y"
+      } Wins`;
+    } else false;
+    // if (winningCombinations) {
+    //   return true;
+    // } else return false;
   }
 }
