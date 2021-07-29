@@ -4,7 +4,7 @@ import GameView from "./GameView.js";
 let game = new Game();
 let gameView = new GameView();
 
-document.querySelector(".restart").addEventListener("click", () => restart());
+document.querySelector(".restart").addEventListener("click", () => Onrestart());
 
 const title = document.querySelectorAll(".board-title");
 title.forEach((title) => {
@@ -17,7 +17,7 @@ function titleClick(i) {
   game.makeMove(i);
   gameView.updateBoard(game);
 }
-function restart() {
+function Onrestart() {
   game = new Game();
   gameView.updateBoard(game);
   document.getElementById("winning").style.visibility = "hidden";

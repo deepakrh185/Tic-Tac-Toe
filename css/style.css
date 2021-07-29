@@ -71,21 +71,22 @@ h1 {
   height: 500px;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 }
 .board {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   flex-grow: 1;
-  grid-gap: 0;
-  padding: 10px;
   font-size: 80px;
+  padding: 10px;
 }
 .board-title:not(:nth-child(3n)) {
   display: flex;
   justify-content: center;
   align-items: center;
   border-right: solid 1px grey;
+  padding: 10px;
 }
 .board-title:not(:nth-last-child(-n + 3)) {
   border-bottom: solid 1px grey;
@@ -95,6 +96,7 @@ h1 {
   align-items: center;
   background: white;
   display: flex;
+  flex-grow: 1;
   cursor: pointer;
 }
 .board-title:hover {
@@ -102,6 +104,8 @@ h1 {
 }
 .tile-winner {
   color: green;
+  padding: 10px;
+  flex-grow: 1;
 }
 .show {
   background: #000;
@@ -110,24 +114,39 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px 0;
+  margin: 50px 0;
   font-family: serif;
   color: #7158e2;
 }
 
-.win {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px 0;
-  font-family: serif;
-  color: #7158e2;
-}
 @media (max-width: 1200px) {
   .wrapper {
     flex-direction: column;
   }
   .left {
     margin-bottom: 20px;
+  }
+}
+@media (max-width: 400px) {
+  .game {
+    width: 300px;
+    height: 300px;
+  }
+  .header .player-X {
+    font-size: 22px;
+  }
+  .header .player-Y {
+    font-size: 22px;
+  }
+  .board {
+    padding: 0px;
+    font-size: 60px;
+  }
+  .wrapper {
+    width: 0px;
+    margin-left: 95px;
+  }
+  h1 {
+    font-size: 40px;
   }
 }

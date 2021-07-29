@@ -66,7 +66,7 @@ export default class Game {
 
       document.querySelector("[winning]").textContent = `${
         this.turn === "X" ? "X" : "Y"
-      } Wins`;
+      } Wins 🎉`;
     } else false;
     // if (winningCombinations) {
     //   return true;
